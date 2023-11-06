@@ -6,6 +6,7 @@ public class logic {
 		// TODO Auto-generated method stub
 		
 		Scanner imput=new Scanner(System.in);
+		System.out.println("este es un mensaje nuevo");
 		   String menu = "<<<<<< MENU PRINCIPAL >>>>>\n\n" +
 	                "1.Numeros Romanos\n" +
 	                "2. Egolatras\n" +
