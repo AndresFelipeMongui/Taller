@@ -2,7 +2,7 @@ package logic;
 
 public class work {
 	
-	private int x;
+	
 	  public static String convertToRoman(int number){
 
 	        return null;
