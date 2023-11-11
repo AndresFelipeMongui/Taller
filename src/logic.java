@@ -27,6 +27,19 @@ public class logic {
 
 	            switch(option){
 	                case '1' : Roman();
+				int number;
+        			String roman_number;
+        			Scanner sc = new Scanner(System.in);
+        			System.out.println("Ingrese un numero");
+        			number = sc.nextInt();
+
+        			if (number < 1 || number > 3000){
+           			 System.out.println("El numero debe de estar entre 1 y 3000");
+        			} else {
+           			roman_number = converttoRoman(number);
+          			System.out.println(number + " en numero romano es: " + roman_number);
+       				}
+        			sc.close();
 	                break;
 
 	                case '2' :;
