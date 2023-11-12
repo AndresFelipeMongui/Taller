@@ -42,8 +42,7 @@ public class logic {
         			sc.close();
 	                break;
 
-	                case '2' ://work.getpowerformat(null);
-	                	//work.getprimefactors(option);
+	                case '2' :
 	                			
 				
         		Scanner scanner = new Scanner (System.in);
