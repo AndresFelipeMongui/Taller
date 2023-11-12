@@ -25,7 +25,7 @@ public class logic {
                 		+ "1. Roman Numbers \n" 
                 		+ "2. Prime Factors \n" 
                 		+ "3. Proper Name \n" 
-                		+ "4. Narcissistic Numbers \n"
+                		+ "4. Egomaniac Numbers \n"
                 		+ "5. Magic Number \n" 
                 		+ "6. Amicable Numbers \n" 
                 		+ "0. Exit");
