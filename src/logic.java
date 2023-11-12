@@ -1,3 +1,10 @@
+
+import java.util.Scanner;
+import java.lang.Math;
+import logic.work;
+import javax.swing.JOptionPane;
+import java.util.List;
+public class logic {
 public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         work w = new work();
@@ -139,5 +146,7 @@ public static void main(String[] args) {
                 break;
             }
         } while (choice != 0);
-    }
+ 	
 }
+	 }
+	 
