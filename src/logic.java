@@ -1,102 +1,143 @@
-import java.util.Scanner;
-import java.lang.Math;
-import logic.work;
-public class logic {
-	private Scanner input;
-	 public logic() {
-	        input = new Scanner(System.in);
-	    }
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		Scanner input=new Scanner(System.in);
+public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        work w = new work();
+        int option;
+        int choice = 0;
 
-		   String menu = "<<<<<< MENU PRINCIPAL >>>>>\n\n" +
-	                "1.Numeros Romanos\n" +
-	                "2.Factores Primos\n" +
-	                "3.Nombre Propio\n" +
-	                "4.Números Ególatras\n"+
-	                "5.Número Mágico\n" +
-	                "6.Números Amigos\n"+
-	                "X. Salir";
-		   char option = 0;
-		   do{
-	            System.out.println( menu );
+        do {
+            try {
+                String input = JOptionPane.showInputDialog("<<<<<< MAIN MENU >>>>> \n" 
+                		+ "1. Roman Numbers \n" 
+                		+ "2. Prime Factors \n" 
+                		+ "3. Proper Name \n" 
+                		+ "4. Narcissistic Numbers \n"
+                		+ "5. Magic Number \n" 
+                		+ "6. Amicable Numbers \n" 
+                		+ "0. Exit");
 
-				option = input.nextLine().charAt(0);
+                option = Integer.parseInt(input);
 
-	            switch(option){
-	            case '1' :  work.converttoRoman(option);
-				int number;
-        			String roman_number;
-        			Scanner sc = new Scanner(System.in);
-        			System.out.println("Ingrese un numero");
-        			number = sc.nextInt();
+                switch(option) {
+                    case 1:
+                        
+                        Scanner sc1 = new Scanner(System.in);
+                        int number = Integer.parseInt(JOptionPane.showInputDialog("Enter a number"));
+                        String convertRoman = work.converttoRoman(number);
 
-        			if (number < 1 || number > 3000){
-           			 System.out.println("El numero debe de estar entre 1 y 3000");
-        			} else {
-           			roman_number = work.converttoRoman(number);
-          			System.out.println(number + " en numero romano es: " + roman_number);
-       				}
-        			sc.close();
-	                break;
+                        if (number < 1 || number > 3000) {
+                            JOptionPane.showMessageDialog(null, "The number must be between 1 y 3000");
+                        } else {
+                        	String roman_number;
+                            roman_number = work.converttoRoman(number);
+                            JOptionPane.showMessageDialog(null, number + " in roman number is: " + roman_number);
+                        }
+                        sc1.close();
+                        break;
 
-	                case '2' :
-	                			
-				
-        		Scanner scanner = new Scanner (System.in);
-       			System.out.println("Ingrese un numero");
-        		int number2 = scanner.nextInt();
-        		List<Integer> primefactors = work.getprimefactors(number2);
+                    case 2:
+                        Scanner sc2 = new Scanner(System.in);
+                        int number2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter a number"));
+                        List<Integer> getFactors = work.getprimefactors(number2);
+                        
+                        List<Integer> primefactors;
+                        primefactors = work.getprimefactors(number2);
+                        
+                        String getpowerformat;
+                        getpowerformat = work.getpowerformat(primefactors);
+                        
+                        JOptionPane.showMessageDialog(null, "The prime factor of " + number2 + " are: " + primefactors);
+                        JOptionPane.showMessageDialog(null, "Expressed in power format: " + getpowerformat);
+                        sc2.close();
+                        break;
 
-        		System.out.println("Los factores primos de " + number2 + " son: " + primefactors);
-        		System.out.println("Expresado en formato de potencias: " + work.getpowerformat(primefactors));
-        		scanner.close();
-    			
-	                break;
-				    
-	                case '3' :work.name(" ") ;
+                    case 3 :
+                    	
+                    	
+                    work.name(" ") ;
+                    
 	                Scanner Scan=new Scanner(System.in);
-	        		System.out.println("Ingrese el texto");
-	        		// se ingresa la cadena y se eliminan los espacios de inicio y final
+	                System.out.println("Enter the text");	// se ingresa la cadena y se eliminan los espacios de inicio y final
+	
 	        		String chain=Scan.nextLine().trim();
 	        		String name=work.name(chain);
 	        		System.out.println(name);
-	        		
-	        		
-	        		
-	        		
 	                break;
-	                case '4':work.isEgolat(0);
+	                
+	                case 4:work.isEgolat(0);
 	                Scanner scan = new Scanner(System.in);
 	                int number1=0;
 	                boolean letter=false;
 	                do	{
-	                	// se crea la excepcion cuando el usuario digite una letra       
+	                	// se crea la excepcion cuando el usuario digite una letra  
+	                	
 	                try	{
-	       		 System.out.print("Digite el numero: ");
-	       		 
-	       		  number1 = Integer.parseInt(scan.nextLine());
-	       		  letter=true;
-	                }catch(java.lang.NumberFormatException excepcion)	
-	                {System.out.println("Ingrese un numero");	}
+	                	number1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter a number:"));
+	                	
+	                	letter=true;
+	                	
+	                }catch(java.lang.NumberFormatException excepcion){
+	                	number1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter a number"));	
+	                	}
 	                }while(letter==false);// solo avanza si se digita un numero
-	       		boolean isEgolatra = work.isEgolat(number1);
+	                boolean egolat = work.isEgolat(number1);
 	       		
-			       if(isEgolatra)	{
-			    	   System.out.println("El numero ingresado es un numero egolatra");
-			       }else	{System.out.println("El numero ingresado no es un numero egolatra");}
+			       if(egolat)	{
+			    	   JOptionPane.showMessageDialog(null, "The number entered is an egomaniac number");
+			       }else	{JOptionPane.showMessageDialog(null, "The number entered is NOT an egomaniac number");}
 	       		 
 	                break;
-	                case '5':;
+	                
+	                case 5:;
+	                int numberToCheck;
+                    do {
+                        try {
+                            numberToCheck = Integer.parseInt(JOptionPane.showInputDialog("Enter a number with at least two digits:"));
+                            if (String.valueOf(numberToCheck).length() < 2 || numberToCheck < 0) {
+                                JOptionPane.showMessageDialog(null, "Please enter a valid number with at least two digits.");
+                                numberToCheck = -1; // Forzar la repetición del bucle
+                            }
+                        } catch (NumberFormatException e) {
+                            JOptionPane.showMessageDialog(null, "Please enter a valid number.");
+                            numberToCheck = -1; // Forzar la repetición del bucle
+                        }
+                    } while (numberToCheck < 0 || String.valueOf(numberToCheck).length() < 2);
+
+                    boolean isMagic = work.isMagicNumber(numberToCheck);
+
+                    if (isMagic) {
+                        JOptionPane.showMessageDialog(null, numberToCheck + " is a magic number!");
+                    } else {
+                        JOptionPane.showMessageDialog(null, numberToCheck + " is not a magic number.");
+                    }
 	                break;
-	                case '6':;
-	            }
+	                
+	                case 6:;
+	                try {
+                        int num1 = Integer.parseInt(JOptionPane.showInputDialog("Enter the first number:"));
+                        int num2 = Integer.parseInt(JOptionPane.showInputDialog("Enter the second number:"));
+                        boolean areFriends = work.areFriendNumbers(num1, num2);
+                        JOptionPane.showMessageDialog(null, "Are the numbers friends?: " + areFriends);
+                    } catch (NumberFormatException e) {
+                        JOptionPane.showMessageDialog(null, "Introduce valid numbers please (positive integers).");
+                    }
+                    break;
+                    
+                case 0:
+                    JOptionPane.showMessageDialog(null, "Goodbye!");
+                    break;
+	                
+                default:
+                    JOptionPane.showMessageDialog(null, "Invalid option. Try again, please.");
+                }
+            
 
-	        }while (Character.toUpperCase(option) != 'X');
-	}
-	
-
-
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid number.");
+                choice = -1;
+            } catch (NullPointerException e) {
+                JOptionPane.showMessageDialog(null, "Goodbye!");
+                break;
+            }
+        } while (choice != 0);
+    }
 }
