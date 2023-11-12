@@ -1,11 +1,21 @@
 
-import java.util.Scanner;
-import java.lang.Math;
+
 import logic.work;
-import javax.swing.JOptionPane;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+import java.util.Arrays;
+
 public class logic {
-public static void main(String[] args) {
+    private Scanner input;
+
+    public logic() {
+        input = new Scanner(System.in);
+    }
+
+    public static void main(String[] args) {
+
         Scanner entrada = new Scanner(System.in);
         work w = new work();
         int option;
@@ -17,7 +27,7 @@ public static void main(String[] args) {
                 		+ "1. Roman Numbers \n" 
                 		+ "2. Prime Factors \n" 
                 		+ "3. Proper Name \n" 
-                		+ "4. Narcissistic Numbers \n"
+                		+ "4. Egomaniac Numbers \n"
                 		+ "5. Magic Number \n" 
                 		+ "6. Amicable Numbers \n" 
                 		+ "0. Exit");
