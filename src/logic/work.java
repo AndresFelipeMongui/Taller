@@ -29,15 +29,15 @@ public class work {
 		    }
 	
 	   
-	    public static String name(String cadena)	{
-	    String [] palabras=cadena.split(" ");// se va a dividir cada que encuentre un espacio vacio
+	    public static String name(String chain)	{
+	    String [] words=chain.split(" ");// se va a dividir cada que encuentre un espacio vacio
 	    	String resultado = null;
 	    	StringBuilder result=new StringBuilder(); 
-	    for(int i=0;i<palabras.length;i++)	{
+	    for(int i=0;i<words.length;i++)	{
 			//se obtiene la primer letra de cada palabra
-			String palabra=palabras[i];
+			String word=words[i];
 			try	{
-			String iniciales=palabra.substring(0,1); String second=palabra.substring(1);
+			String iniciales=word.substring(0,1); String second=word.substring(1);
 			String Mayor = iniciales.toUpperCase();
 			String end=Mayor + second;
 			result.append(end).append(" ");

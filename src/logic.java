@@ -48,8 +48,8 @@ public class logic {
 	                Scanner Scan=new Scanner(System.in);
 	        		System.out.println("Ingrese el texto");
 	        		// se ingresa la cadena y se eliminan los espacios de inicio y final
-	        		String cadena=Scan.nextLine().trim();
-	        		String name=work.name(cadena);
+	        		String chain=Scan.nextLine().trim();
+	        		String name=work.name(chain);
 	        		System.out.println(name);
 	        		
 	        		
@@ -85,13 +85,6 @@ public class logic {
 	        }while (Character.toUpperCase(option) != 'X');
 	}
 	
-	
-	private static void Roman() {
-		// TODO Auto-generated method stub
-		Scanner input=new Scanner(System.in);
-		System.out.println("Ingrese el numero a convertir:");
-		int number=input.nextInt();
-		
-	}
+
 
 }
