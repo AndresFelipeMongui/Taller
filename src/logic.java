@@ -26,7 +26,7 @@ public class logic {
 				option = input.nextLine().charAt(0);
 
 	            switch(option){
-	            case '1' : work.Roman();
+	            case '1' :  work.converttoRoman(option);
 				int number;
         			String roman_number;
         			Scanner sc = new Scanner(System.in);
@@ -36,22 +36,24 @@ public class logic {
         			if (number < 1 || number > 3000){
            			 System.out.println("El numero debe de estar entre 1 y 3000");
         			} else {
-           			roman_number = converttoRoman(number);
+           			roman_number = work.converttoRoman(number);
           			System.out.println(number + " en numero romano es: " + roman_number);
        				}
         			sc.close();
 	                break;
 
-	                case '2' :work.primefactors();
+	                case '2' ://work.getpowerformat(null);
+	                	//work.getprimefactors(option);
+	                			
 				
-        		Scanner sc = new Scanner (System.in);
+        		Scanner scanner = new Scanner (System.in);
        			System.out.println("Ingrese un numero");
-        		int number = sc.nextInt();
-        		List<Integer> primefactors = getprimefactors(number);
+        		int number2 = scanner.nextInt();
+        		List<Integer> primefactors = work.getprimefactors(number2);
 
-        		System.out.println("Los factores primos de " + number + " son: " + primefactors);
-        		System.out.println("Expresado en formato de potencias: " + getpowerformat(primefactors));
-        		sc.close();
+        		System.out.println("Los factores primos de " + number2 + " son: " + primefactors);
+        		System.out.println("Expresado en formato de potencias: " + work.getpowerformat(primefactors));
+        		scanner.close();
     			
 	                break;
 				    
