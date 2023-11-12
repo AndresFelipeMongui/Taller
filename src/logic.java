@@ -62,12 +62,11 @@ public static void main(String[] args) {
                     	
                     work.name(" ") ;
                     
-	                Scanner Scan=new Scanner(System.in);
-	                System.out.println("Enter the text");	// se ingresa la cadena y se eliminan los espacios de inicio y final
-	
-	        		String chain=Scan.nextLine().trim();
+                    String chain = JOptionPane.showInputDialog("Enter the text");	
+                    String trimmedChain = chain.trim();//se eliminan los espacios de inicio y final de la cadena
 	        		String name=work.name(chain);
-	        		System.out.println(name);
+	        		JOptionPane.showInputDialog(name);
+	        		
 	                break;
 	                
 	                case 4:work.isEgolat(0);
