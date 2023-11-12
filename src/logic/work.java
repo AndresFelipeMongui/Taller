@@ -21,6 +21,41 @@ public class work {
 
 	        return thousands[thousand] + hundreds[hundred] + tens[ten] + units[unit];
 	    }
+
+	//Dado un número ingresado por el usuario expresar sus factores primos en potencia
+	 private static List<Integer> getprimefactors(int number) {
+        List<Integer> primefactors = new ArrayList<>();
+
+        for (int i = 2; i <= number; i++) {
+            while (number % i == 0) {
+                primefactors.add(i);
+                number = number / i;
+            }
+        }
+
+        return primefactors;
+    }
+
+    private static String getpowerformat(List<Integer> primefactors) {
+        StringBuilder powerformat = new StringBuilder();
+
+        int count = 1;
+        int factorAnterior = primefactors.get(0);
+
+        for (int i = 1; i < primefactors.size(); i++) {
+            if (primefactors.get(i) == factorAnterior) {
+                count++;
+            } else {
+                powerformat.append(factorAnterior).append("^").append(count).append(" * ");
+                factorAnterior = primefactors.get(i);
+                count = 1;
+            }
+        }
+
+        powerformat.append(factorAnterior).append("^").append(count);
+
+        return powerformat.toString();
+    }
 		  
 
 		    public static String calcFactors(int number){
