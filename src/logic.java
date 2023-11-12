@@ -26,7 +26,7 @@ public class logic {
 				option = input.nextLine().charAt(0);
 
 	            switch(option){
-	            case '1' : Roman();
+	            case '1' : work.Roman();
 				int number;
         			String roman_number;
         			Scanner sc = new Scanner(System.in);
@@ -42,8 +42,19 @@ public class logic {
         			sc.close();
 	                break;
 
-	                case '2' :;
+	                case '2' :work.primefactors();
+				
+        		Scanner sc = new Scanner (System.in);
+       			System.out.println("Ingrese un numero");
+        		int number = sc.nextInt();
+        		List<Integer> primefactors = getprimefactors(number);
+
+        		System.out.println("Los factores primos de " + number + " son: " + primefactors);
+        		System.out.println("Expresado en formato de potencias: " + getpowerformat(primefactors));
+        		sc.close();
+    			
 	                break;
+				    
 	                case '3' :work.name(" ") ;
 	                Scanner Scan=new Scanner(System.in);
 	        		System.out.println("Ingrese el texto");
