@@ -1,4 +1,19 @@
-public static void main(String[] args) {
+package logic;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+import java.util.Arrays;
+
+public class logic {
+    private Scanner input;
+
+    public logic() {
+        input = new Scanner(System.in);
+    }
+
+    public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         work w = new work();
         int option;
@@ -10,7 +25,7 @@ public static void main(String[] args) {
                 		+ "1. Roman Numbers \n" 
                 		+ "2. Prime Factors \n" 
                 		+ "3. Proper Name \n" 
-                		+ "4. Egomaniac Numbers \n"
+                		+ "4. Narcissistic Numbers \n"
                 		+ "5. Magic Number \n" 
                 		+ "6. Amicable Numbers \n" 
                 		+ "0. Exit");
@@ -25,7 +40,7 @@ public static void main(String[] args) {
                         String convertRoman = work.converttoRoman(number);
 
                         if (number < 1 || number > 3000) {
-                            JOptionPane.showMessageDialog(null, "The number must be between 1 and 3000");
+                            JOptionPane.showMessageDialog(null, "The number must be between 1 y 3000");
                         } else {
                         	String roman_number;
                             roman_number = work.converttoRoman(number);
