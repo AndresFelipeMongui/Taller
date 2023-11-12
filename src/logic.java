@@ -2,9 +2,9 @@ import java.util.Scanner;
 import java.lang.Math;
 import logic.work;
 public class logic {
-	
+	private Scanner input;
 	 public logic() {
-	       Scanner input = new Scanner(System.in);
+	        input = new Scanner(System.in);
 	    }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -26,7 +26,20 @@ public class logic {
 				option = input.nextLine().charAt(0);
 
 	            switch(option){
-	                case '1' : ;
+	            case '1' : Roman();
+				int number;
+        			String roman_number;
+        			Scanner sc = new Scanner(System.in);
+        			System.out.println("Ingrese un numero");
+        			number = sc.nextInt();
+
+        			if (number < 1 || number > 3000){
+           			 System.out.println("El numero debe de estar entre 1 y 3000");
+        			} else {
+           			roman_number = converttoRoman(number);
+          			System.out.println(number + " en numero romano es: " + roman_number);
+       				}
+        			sc.close();
 	                break;
 
 	                case '2' :;
@@ -45,19 +58,19 @@ public class logic {
 	                break;
 	                case '4':work.isEgolat(0);
 	                Scanner scan = new Scanner(System.in);
-	                int number=0;
+	                int number1=0;
 	                boolean letter=false;
 	                do	{
 	                	// se crea la excepcion cuando el usuario digite una letra       
 	                try	{
 	       		 System.out.print("Digite el numero: ");
 	       		 
-	       		  number = Integer.parseInt(scan.nextLine());
+	       		  number1 = Integer.parseInt(scan.nextLine());
 	       		  letter=true;
 	                }catch(java.lang.NumberFormatException excepcion)	
 	                {System.out.println("Ingrese un numero");	}
 	                }while(letter==false);// solo avanza si se digita un numero
-	       		boolean isEgolatra = work.isEgolat(number);
+	       		boolean isEgolatra = work.isEgolat(number1);
 	       		
 			       if(isEgolatra)	{
 			    	   System.out.println("El numero ingresado es un numero egolatra");
@@ -73,5 +86,12 @@ public class logic {
 	}
 	
 	
+	private static void Roman() {
+		// TODO Auto-generated method stub
+		Scanner input=new Scanner(System.in);
+		System.out.println("Ingrese el numero a convertir:");
+		int number=input.nextInt();
+		
+	}
 
 }
