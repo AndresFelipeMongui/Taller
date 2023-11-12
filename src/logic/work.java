@@ -1,5 +1,6 @@
 package logic;
-
+import java.util.ArrayList;
+import java.util.List;
 public class work {
 	
 	
@@ -23,7 +24,7 @@ public class work {
 	    }
 
 	//Dado un número ingresado por el usuario expresar sus factores primos en potencia
-	 private static List<Integer> getprimefactors(int number) {
+	public static List<Integer> getprimefactors(int number) {
         List<Integer> primefactors = new ArrayList<>();
 
         for (int i = 2; i <= number; i++) {
@@ -34,6 +35,27 @@ public class work {
         }
 
         return primefactors;
+    }
+
+     static String getpowerformat(List<Integer> primefactors) {
+        StringBuilder powerformat = new StringBuilder();
+
+        int count = 1;
+        int factorPrev = primefactors.get(0);
+
+        for (int i = 1; i < primefactors.size(); i++) {
+            if (primefactors.get(i) == factorPrev) {
+                count++;
+            } else {
+                powerformat.append(factorPrev).append("^").append(count).append(" * ");
+                factorPrev = primefactors.get(i);
+                count = 1;
+            }
+        }
+
+        powerformat.append(factorPrev).append("^").append(count);
+
+        return powerformat.toString();
     }
 
     private static String getpowerformat(List<Integer> primefactors) {
