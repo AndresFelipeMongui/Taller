@@ -75,7 +75,7 @@ public class logic {
                     String chain = JOptionPane.showInputDialog("Enter the text");	
                     String trimmedChain = chain.trim();//se eliminan los espacios de inicio y final de la cadena
 	        		String name=work.name(chain);
-	        		JOptionPane.showInputDialog(name);
+	        		JOptionPane.showMessageDialog(null, name);
 	        		
 	                break;
 	                
