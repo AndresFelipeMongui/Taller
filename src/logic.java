@@ -132,7 +132,7 @@ public class logic {
                         int num1 = Integer.parseInt(JOptionPane.showInputDialog("Enter the first number:"));
                         int num2 = Integer.parseInt(JOptionPane.showInputDialog("Enter the second number:"));
                         boolean areFriends = work.areFriendNumbers(num1, num2);
-                        JOptionPane.showMessageDialog(null, "Are the numbers friends?: " + areFriends);
+                        JOptionPane.showMessageDialog(null, "Are they friend numbers?: " + areFriends);
                     } catch (NumberFormatException e) {
                         JOptionPane.showMessageDialog(null, "Introduce valid numbers please (positive integers).");
                     }
